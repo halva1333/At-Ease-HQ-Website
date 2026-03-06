@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>At Ease HQ | Veteran Support. Real Brotherhood. Real Direction.</title>
+  <meta
+    name="description"
+    content="At Ease HQ is a veteran-led mission focused on transition support, PTSD conversations, community, guidance, claim readiness education, and veteran housing."
+  />
+  <style>
+    :root {
+      --bg: #08111f;
+      --bg-soft: #0d1a2d;
+      --panel: rgba(12, 26, 45, 0.88);
+      --line: rgba(114, 149, 190, 0.2);
+      --text: #e7eef8;
+      --muted: #9eb2ca;
+      --infantry-blue: #234c7a;
+      --infantry-blue-2: #2f6aa8;
+      --accent: #7ea8d9;
+      --sand: #b9a47a;
+      --danger: #6c7a89;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        linear-gradient(rgba(6, 12, 22, 0.86), rgba(6, 12, 22, 0.94)),
+        radial-gradient(circle at top right, rgba(47,106,168,0.16), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(126,168,217,0.10), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: rgba(6, 12, 22, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--infantry-blue), var(--infantry-blue-2));
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      border: 1px solid rgba(126,168,217,0.28);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(126,168,217,0.08);
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.7rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.7rem;
+      margin-bottom: 4px;
+      color: white;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      background:
+        linear-gradient(180deg, rgba(35,76,122,0.25), rgba(6,12,22,0.88)),
+        var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          135deg,
+          rgba(255,255,255,0.02) 0,
+          rgba(255,255,255,0.02) 6px,
+          transparent 6px,
+          transparent 14px
+        );
+      pointer-events: none;
+    }
+
+    .card-label {
+      color: var(--accent);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      font-size: 1.55rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .check {
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--text);
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .mission-band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(35,76,122,0.16), rgba(126,168,217,0.04));
+    }
+
+    .mission-quote {
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-weight: 700;
+      line-height: 1.4;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      color: #f3f7fb;
+    }
+
+    .founder {
+      align-items: stretch;
+    }
+
+    .founder-panel {
+      min-height: 100%;
+    }
+
+    .founder-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .founder-list div {
+      padding: 12px 14px;
+      border-left: 3px solid var(--accent);
+      background: rgba(255,255,255,0.025);
+      color: var(--muted);
+    }
+
+    .cta-box {
+      background:
+        linear-gradient(135deg, rgba(35,76,122,0.32), rgba(8,17,31,0.96)),
+        var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 20px;
+    }
+
+    footer {
+      padding: 30px 0 50px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .small {
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-title">At Ease HQ</div>
+        <div class="brand-sub">Veteran-Led | Mission Driven | Infantry Built</div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#mission">Mission</a>
+        <a href="#services">What We Do</a>
+        <a href="#founder">Founder</a>
+        <a href="#programs">Programs</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Join the Mission</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Battle-Tested Leadership. Real Veteran Support.</div>
+          <h1>Where Veterans Regroup, Reset, and Rebuild.</h1>
+          <p>
+            At Ease HQ is a veteran-led mission created to bridge the gap between isolation
+            and direction. Built by a former Army Infantryman with 17 years of service,
+            this platform exists to give veterans a place for honest conversations about PTSD,
+            transition support, guidance, claim-readiness education, community, purpose,
+            and long-term stability.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Stand With Us</a>
+            <a href="#services" class="btn btn-secondary">See the Mission</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>17</strong>
+              <span>Years of military leadership and service behind the mission</span>
+            </div>
+            <div class="stat">
+              <strong>1</strong>
+              <span>Clear goal: help veterans find direction, support, and purpose</span>
+            </div>
+            <div class="stat">
+              <strong>100%</strong>
+              <span>Built from lived experience, not theory</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card-label">Mission Brief</div>
+          <h3>At Ease HQ Operating Picture</h3>
+          <div class="checklist">
+            <div class="check">Veteran community and peer support</div>
+            <div class="check">PTSD conversations without judgment</div>
+            <div class="check">Transition guidance and career direction</div>
+            <div class="check">Claim-readiness education and support</div>
+            <div class="check">Long-term vision for veteran housing and family stability</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission" class="mission-band">
+      <div class="container">
+        <p class="mission-quote">
+          “At Ease HQ was built for the veteran who stayed quiet too long, carried too much,
+          and still showed up. This is where that burden gets met with structure, brotherhood,
+          and a new mission.”
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>What We Do</h2>
+          <p>
+            We are building a support ecosystem for veterans and their families with a focus
+            on real conversations, practical guidance, and long-term stability.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Veteran Support</h3>
+            <p>
+              We create a space where veterans can talk openly about PTSD, transition,
+              identity loss, and real-life struggles without feeling judged or dismissed.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Claim Readiness Education</h3>
+            <p>
+              We help veterans organize their story, prepare their documents, and better
+              understand the process so they can submit stronger claims with confidence.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Career & Transition Guidance</h3>
+            <p>
+              We help bridge the gap between military service and civilian opportunity by
+              supporting direction, confidence, and next-step planning.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Community Building</h3>
+            <p>
+              At Ease HQ is designed to reconnect veterans to people who understand the
+              weight they carry and the mission mindset they still live by.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Spouse & Family Support</h3>
+            <p>
+              Strong families matter. Our long-term vision includes support systems that
+              help veteran households stay connected, informed, and stable.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Veteran Housing Vision</h3>
+            <p>
+              We are building toward affordable veteran-focused housing solutions that go
+              beyond temporary help and create long-term security and dignity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="founder">
+      <div class="container">
+        <div class="section-head">
+          <h2>Built by Experience</h2>
+          <p>
+            At Ease HQ was not created from a trend. It was created from service, leadership,
+            transition, struggle, and the decision to keep helping others after the uniform came off.
+          </p>
+        </div>
+
+        <div class="grid-2 founder">
+          <div class="card founder-panel">
+            <h3>Founder</h3>
+            <p>
+              Henry Alvarado is a recently separated Army Infantryman, combat veteran,
+              and mission-driven leader who built At Ease HQ after seeing firsthand how many
+              veterans struggle in silence with PTSD, the VA system, transition, purpose,
+              and knowing where to turn next.
+            </p>
+
+            <div class="founder-list">
+              <div>17 years of service and leadership experience</div>
+              <div>Veteran-focused, community-centered mission</div>
+              <div>Built to serve those still fighting battles after service</div>
+              <div>Focused on guidance, structure, and long-term impact</div>
+            </div>
+          </div>
+
+          <div class="card founder-panel">
+            <h3>Why This Exists</h3>
+            <p>
+              Too many veterans are expected to “be fine” after service, even when they are
+              carrying trauma, pressure, financial stress, relationship strain, or uncertainty
+              about the future. At Ease HQ exists to become the bridge — the place where
+              veterans can regroup, get oriented, and move forward with support.
+            </p>
+
+            <div class="founder-list">
+              <div>No fake motivation. Real talk.</div>
+              <div>No judgment. Just support, direction, and community.</div>
+              <div>Built with an infantry mindset: disciplined, direct, mission-first.</div>
+              <div>Designed to grow into a national platform for veteran impact.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs">
+      <div class="container">
+        <div class="section-head">
+          <h2>Mission Lanes</h2>
+          <p>
+            The platform is designed to grow in phases while staying grounded in one core mission:
+            helping veterans feel seen, supported, and equipped to keep moving.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Debriefing & Conversation</h3>
+            <p>
+              Honest conversations for veterans who need a place to process what they are carrying
+              and reconnect with people who understand.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Education & Readiness</h3>
+            <p>
+              Tools, templates, and support for veterans preparing to advocate for themselves,
+              especially when navigating claims and transition issues.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Housing & Stability</h3>
+            <p>
+              A long-range effort to build veteran-centered housing pathways that combine dignity,
+              structure, and opportunity for families who need a reset.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Join the Mission</h2>
+          <p>
+            Whether you are a veteran, spouse, supporter, community partner, donor,
+            or someone looking to stand in the gap for those who served, At Ease HQ is building
+            something bigger than a brand. We are building a rally point.
+          </p>
+          <div class="hero-cta" style="justify-content:center;">
+            <a class="btn btn-primary" href="mailto:info@ateasehq.org">Email Us</a>
+            <a class="btn btn-secondary" href="#">Instagram</a>
+            <a class="btn btn-secondary" href="#">LinkedIn</a>
+          </div>
+          <p class="small" style="margin-top: 18px;">
+            Replace the email and social links above with your real At Ease HQ contact info.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong>At Ease HQ</strong><br />
+        <span class="small">Veteran-Led. Mission-Driven. Built for the battles after service.</span>
+      </div>
+      <div class="small">
+        © <span id="year"></span> At Ease HQ. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
